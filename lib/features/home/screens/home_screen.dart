@@ -3,11 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stroll/core/constants/app_assets.dart';
 import 'package:stroll/core/extensions/string_api.dart';
+import 'package:stroll/features/bonfire/screens/bonfire_page.dart';
 import 'package:stroll/features/home/view_models/home_view_model.dart';
 
 enum HomeTab {
   home,
-  trending,
+  bonfire,
   messages,
   profile;
 
@@ -15,7 +16,7 @@ enum HomeTab {
     switch (this) {
       case HomeTab.home:
         return AppAssets.svg.pokerCards;
-      case HomeTab.trending:
+      case HomeTab.bonfire:
         return AppAssets.svg.bonfire;
       case HomeTab.messages:
         return AppAssets.svg.chatBubble;
@@ -31,17 +32,17 @@ class HomeScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final homeState = ref.watch(homeStateProvider);
-    final homeController = ref.read(homeStateProvider.notifier);
+    final homeNotifier = ref.read(homeStateProvider.notifier);
 
     return Scaffold(
-        body: Container(),
+        body: const BonfirePage(),
         bottomNavigationBar: BottomNavigationBar(
           showSelectedLabels: false,
           type: BottomNavigationBarType.fixed,
           showUnselectedLabels: false,
           currentIndex: homeState.pageIndex,
           onTap: (index) {
-            homeController.changePage(index);
+            homeNotifier.changePage(index);
           },
           items: [
             for (final tab in HomeTab.values)
