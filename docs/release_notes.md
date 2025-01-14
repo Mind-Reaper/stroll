@@ -5,4 +5,8 @@
 
 ##### What's New
 
+- Feature: Stroll bonfire is now available for all users.
+
 ##### Bug Fixes
+
+- Minor bug fixes and improvements.
