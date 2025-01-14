@@ -8,18 +8,24 @@ environment:
   sdk: ^3.5.3
 
 dependencies:
+  animate_do: ^3.3.4
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.6.1
   flutter_svg: ^2.0.17
   font_awesome_flutter: ^10.8.0
+  freezed_annotation: ^2.4.4
+  json_annotation: ^4.9.0
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
+  build_runner: ^2.4.13
+  freezed: ^2.5.7
+  json_serializable: ^6.9.0
 
 
 flutter:
@@ -27,6 +33,8 @@ flutter:
 
   assets:
     - assets/
+    - assets/icons/
+    - assets/images/
 
   fonts:
     - family: ProximaNova
@@ -51,7 +59,7 @@ flutter:
         - asset: assets/fonts/ProximaNova-BoldIt.otf
           weight: 700
           style: italic
-        - asset: assets/fonts/ExtraBold-Light.otf
+        - asset: assets/fonts/ProximaNova-ExtraBold.otf
           weight: 800
         - asset: assets/fonts/ProximaNova-Black.otf
           weight: 900
