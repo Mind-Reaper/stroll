@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_neumorphic_plus/flutter_neumorphic.dart';
 import 'package:stroll/core/extensions/int_api.dart';
 
 class OptionBox extends StatelessWidget {
